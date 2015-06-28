@@ -10,6 +10,7 @@ public:
     int getstar();
     void operator+(int);
     void zero();
+    void setscore(int a);
 private:
     int scor;
     int star;

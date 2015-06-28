@@ -8,6 +8,9 @@ Score::Score()
 int Score::getscore(){
     return scor;
 }
+void Score::setscore(int a){
+    scor=a;
+}
 
 int Score::getstar(){
     return star;

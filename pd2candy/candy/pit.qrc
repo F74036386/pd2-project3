@@ -3,7 +3,6 @@
         <file>1.png</file>
         <file>1star.png</file>
         <file>2.png</file>
-        <file>2str.png</file>
         <file>3.png</file>
         <file>3star.png</file>
         <file>4.png</file>
@@ -21,5 +20,6 @@
         <file>43.png</file>
         <file>44.png</file>
         <file>lose.png</file>
+        <file>2star.png</file>
     </qresource>
 </RCC>

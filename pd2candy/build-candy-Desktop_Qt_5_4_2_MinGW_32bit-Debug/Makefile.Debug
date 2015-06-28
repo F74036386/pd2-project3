@@ -149,13 +149,13 @@ compiler_rcc_make_all: debug/qrc_pit.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_pit.cpp
 debug/qrc_pit.cpp: ../candy/pit.qrc \
+		../candy/2star.png \
 		../candy/42.png \
 		../candy/43.png \
 		../candy/44.png \
 		../candy/32.png \
 		../candy/33.png \
 		../candy/34.png \
-		../candy/2str.png \
 		../candy/22.png \
 		../candy/23.png \
 		../candy/24.png \

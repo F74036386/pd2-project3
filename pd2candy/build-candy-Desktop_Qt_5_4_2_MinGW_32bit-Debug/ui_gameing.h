@@ -36,6 +36,8 @@ public:
     QLabel *label_7;
     QLCDNumber *lcdNumber_3;
     QLabel *label_8;
+    QLabel *label_9;
+    QLCDNumber *lcdNumber_4;
 
     void setupUi(QWidget *gameing)
     {
@@ -117,6 +119,13 @@ public:
         label_8->setObjectName(QStringLiteral("label_8"));
         label_8->setGeometry(QRect(680, 410, 151, 31));
         label_8->setFont(font5);
+        label_9 = new QLabel(gameing);
+        label_9->setObjectName(QStringLiteral("label_9"));
+        label_9->setGeometry(QRect(70, 0, 61, 31));
+        label_9->setFont(font2);
+        lcdNumber_4 = new QLCDNumber(gameing);
+        lcdNumber_4->setObjectName(QStringLiteral("lcdNumber_4"));
+        lcdNumber_4->setGeometry(QRect(60, 30, 91, 31));
 
         retranslateUi(gameing);
 
@@ -135,6 +144,7 @@ public:
         label_6->setText(QString());
         label_7->setText(QApplication::translate("gameing", "stars", 0));
         label_8->setText(QApplication::translate("gameing", " pass:1000 score", 0));
+        label_9->setText(QApplication::translate("gameing", " b e s t", 0));
     } // retranslateUi
 
 };

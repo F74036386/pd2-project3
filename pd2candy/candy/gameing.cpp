@@ -17,6 +17,7 @@ gameing::gameing(QWidget *parent) :
     chitest=0;
     connect(ui->pushButton,SIGNAL(clicked()),this,SLOT(restart()));
   gameoverlab=NULL;
+  best=0;
     restart();
 }
 
@@ -149,6 +150,8 @@ void gameing::newlab(int row,int col){
                                  delete lab[i][j];
                                  lab[i][j]=0;
                                  colar[i][j]=0;
+                                 score+50;
+                                 scorechange();
                              }
                          }
                      }
@@ -157,6 +160,8 @@ void gameing::newlab(int row,int col){
                      delete lab[col][row];
                      lab[col][row]=NULL;
                      colar[col][row]=0;
+                     score+50;
+                     scorechange();
                      int tt=colar[temcol][temrow];
                      for(int i=0;i<10;i++){
                          for(int j=0;j<10;j++){
@@ -323,7 +328,7 @@ break;
             int dd=0;
             while(dd==0){
 
-                cout<<i<<endl;
+              //  cout<<i<<endl;
                 dd=1;
                 for(int j=0;j<10;j++){
                     if(colar[i][j]==0){
@@ -521,10 +526,10 @@ break;
                 }
 
                 if(fla!=1){
-                    if(c1==4){
+                    if(r1==4){
                         makelab(j,i,tempp,2);
                     }
-                    if(c1==5){
+                    if(r1==5){
                         makelab(j,i,tempp,5);
                     }
 
@@ -708,6 +713,7 @@ return flag;
  void gameing::scorechange(){
      ui->lcdNumber->display(score.getscore());
      ui->lcdNumber_3->display(score.getstar());
+     checkbest();
 
 
  }
@@ -715,3 +721,43 @@ return flag;
       step--;
      ui->lcdNumber_2->display(step);
   }
+
+  void gameing:: checkbest(){            //  use open file to check best score
+       ifstream fin;
+       fin.open("F74036386best.txt", ios::in);
+
+       if(!fin){
+           best=score.getscore();
+            ui->lcdNumber_4->display(best);
+             fin.close();
+            ofstream fout;
+            fout.open("F74036386best.txt",ios::out);
+            if(!fout){
+                return;
+            }
+            fout<<best;
+            fout.close();
+
+       }
+       else{
+       fin>>best;
+       fin.close();
+
+       if(score.getscore()>best){
+          best=score.getscore();
+            ui->lcdNumber_4->display(best);
+           ofstream fout;
+           fout.open("F74036386best.txt",ios::out);
+           if(!fout){
+               ui->lcdNumber_4->display(best);
+               return;
+           }
+           fout<<best;
+           fout.close();
+       }
+
+          ui->lcdNumber_4->display(best);
+    }
+
+
+   }

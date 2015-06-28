@@ -10,6 +10,8 @@
 #include<cmath>
 #include<cstdlib>
 #include<cstdio>
+#include<iostream>
+#include<fstream>
 #include"stone.h"
 #include"normalstone.h"
 #include"columnstone.h"
@@ -50,6 +52,7 @@ private slots:
     void restart();
     void check(int ,int);
     void solve(int ,int ,int);
+    void checkbest();
 
 
 private:
@@ -63,6 +66,7 @@ private:
     int chitest;
     int go;
     QLabel *gameoverlab;
+    int best;
 };
 
 #endif // GAMEING_H
