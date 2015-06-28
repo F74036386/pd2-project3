@@ -38,6 +38,8 @@ public:
     QLabel *label_8;
     QLabel *label_9;
     QLCDNumber *lcdNumber_4;
+    QPushButton *pushButton_2;
+    QLabel *label_10;
 
     void setupUi(QWidget *gameing)
     {
@@ -121,11 +123,23 @@ public:
         label_8->setFont(font5);
         label_9 = new QLabel(gameing);
         label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setGeometry(QRect(70, 0, 61, 31));
+        label_9->setGeometry(QRect(100, 0, 61, 31));
         label_9->setFont(font2);
         lcdNumber_4 = new QLCDNumber(gameing);
         lcdNumber_4->setObjectName(QStringLiteral("lcdNumber_4"));
-        lcdNumber_4->setGeometry(QRect(60, 30, 91, 31));
+        lcdNumber_4->setGeometry(QRect(80, 30, 91, 31));
+        pushButton_2 = new QPushButton(gameing);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(250, 40, 91, 41));
+        label_10 = new QLabel(gameing);
+        label_10->setObjectName(QStringLiteral("label_10"));
+        label_10->setGeometry(QRect(230, 10, 161, 31));
+        QFont font6;
+        font6.setFamily(QStringLiteral("Agency FB"));
+        font6.setPointSize(18);
+        font6.setBold(true);
+        font6.setWeight(75);
+        label_10->setFont(font6);
 
         retranslateUi(gameing);
 
@@ -145,6 +159,8 @@ public:
         label_7->setText(QApplication::translate("gameing", "stars", 0));
         label_8->setText(QApplication::translate("gameing", " pass:1000 score", 0));
         label_9->setText(QApplication::translate("gameing", " b e s t", 0));
+        pushButton_2->setText(QString());
+        label_10->setText(QApplication::translate("gameing", "forbid falling  colar", 0));
     } // retranslateUi
 
 };

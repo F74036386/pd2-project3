@@ -16,8 +16,11 @@ gameing::gameing(QWidget *parent) :
    }
     chitest=0;
     connect(ui->pushButton,SIGNAL(clicked()),this,SLOT(restart()));
-  gameoverlab=NULL;
+    connect(ui->pushButton_2,SIGNAL(clicked(bool)),this,SLOT(forbib()));
+    gameoverlab=NULL;
   best=0;
+  forbiden=6;
+  forbib();
     restart();
 }
 
@@ -73,6 +76,9 @@ void gameing::restart(){
 void gameing::newlab(int row,int col){
     srand((unsigned)time(NULL)+rand());
     int cola=rand()%4+1;
+    while(cola==forbiden){
+    cola=rand()%4+1;
+    }
     makelab(row, col,cola, 1);
 }
  void gameing::makelab(int row,int col,int cola,int type){
@@ -761,3 +767,26 @@ return flag;
 
 
    }
+
+  void gameing::forbib(){
+      if(go!=0)return;
+      if(chitest!=0)return;
+      chitest=1;
+      srand((unsigned)time(NULL)+rand());
+      if(forbiden==0){
+          forbiden=rand()%4+1;
+          char aaa[30];
+           sprintf(aaa,":/%d.png",forbiden);
+           ui->pushButton_2->setIcon(QIcon(QPixmap(aaa)));
+            ui->pushButton_2->show();
+      }
+      else{
+          forbiden=0;
+          char aaa[30];
+           sprintf(aaa,":/%d.png",forbiden);
+           ui->pushButton_2->setIcon(QIcon(QPixmap(aaa)));
+            ui->pushButton_2->show();
+
+      }
+    chitest=0;
+  }

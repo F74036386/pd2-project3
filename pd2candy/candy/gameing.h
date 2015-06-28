@@ -45,6 +45,7 @@ public:
      void sleep(unsigned int);
      bool isgameover();
      void gameover();
+
     ~gameing();
 signals:
      void quit(int star,int score);
@@ -53,6 +54,7 @@ private slots:
     void check(int ,int);
     void solve(int ,int ,int);
     void checkbest();
+    void forbib();
 
 
 private:
@@ -67,6 +69,7 @@ private:
     int go;
     QLabel *gameoverlab;
     int best;
+    int forbiden;
 };
 
 #endif // GAMEING_H

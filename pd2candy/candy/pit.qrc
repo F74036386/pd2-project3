@@ -21,5 +21,6 @@
         <file>44.png</file>
         <file>lose.png</file>
         <file>2star.png</file>
+        <file>0.png</file>
     </qresource>
 </RCC>
